@@ -1,0 +1,15 @@
+#header1 {
+    background: #664c8f;
+    background-image: url(../../../Images/Banner1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #664c8f;
+    height: auto;
+    width: auto;
+    padding: 200px 100px
+}
+#h1 {
+    color: #df7442;
+    font-family: Arial;
+    text-align: center;
+}

@@ -1,0 +1,90 @@
+[
+    {
+        "id": 0,
+        "name": "BMW X1",
+        "price": "$30k",
+        "Color": "2hr",
+        "detail": "The F48 BMW X1 is the second and current generation of the BMW X1 range of subcompact luxury crossover SUV.",
+        "img": "https://imgd.aeplcdn.com/227x128/n/cw/ec/45242/bmw-x1-facelift-right-front-three-quarter2.jpeg?q=85"
+    },
+    {
+        "id": 1,
+        "name": "BMW X3",
+        "price": "$35k",
+        "Color": "2hr",
+        "detail": "BMW launched the third generation X3 (codenamed G01) in India on 19 April 2018 with a diesel-only powertrain. After two months, the brand also introduced a petrol variant of the X3.",
+        "img": "https://imgd.aeplcdn.com/664x374/cw/ec/32888/BMW-X3-Exterior-125761.jpg?wm=0&q=85"
+    },
+    {
+        "id": 2,
+        "name": "BMW X4",
+        "price": "$40k",
+        "Color": "2hr",
+        "detail": "The BMW X4 distinguishes itself in the SUV car lineup with its distinctive Coupe characteristics.",
+        "img": "https://imgd.aeplcdn.com/664x374/n/cw/ec/37712/x4-exterior-right-front-three-quarter-146791.jpeg?q=85"
+    },
+    {
+        "id": 3,
+        "name": "BMW X5",
+        "price": "$50k",
+        "Color": "2hr",
+        "detail": "The fourth-generation X5 (Codenamed G05) was introduced in the country on 16 May 2019. Meanwhile, BMW updated the X5 range by adding two new variants in September 2021.",
+        "img": "https://imgd.aeplcdn.com/664x374/cw/ec/37065/BMW-X5-Right-Front-Three-Quarter-157119.jpg?wm=0&q=85"
+    },
+    {
+        "id": 4,
+        "name": "BMW X6",
+        "price": "$45k",
+        "Color": "2hr",
+        "detail": "German luxury marquee BMW has unveiled the third generation X6. The model will make its debut at the 2019 Frankfurt Motor Show later this year. ",
+        "img": "https://imgd.aeplcdn.com/664x374/n/cw/ec/41375/x6-exterior-right-front-three-quarter.jpeg?q=85"
+    },
+    {
+        "id": 5,
+        "name": "BMW X7",
+        "price": "$70k",
+        "Color": "2hr",
+        "detail": "The exceptionally large kidney grille lends it a family face. On the other hand, the BMW Laser Light technology with blue X-shaped elements give it an aggressive look. ",
+        "img": "https://imgd.aeplcdn.com/664x374/cw/ec/28286/BMW-X7-Right-Front-Three-Quarter-164106.jpg?wm=0&q=85"
+    },
+    {
+        "id": 6,
+        "name": "BMW X8",
+        "price": "$80k",
+        "Color": "2hr",
+        "detail": "The BMW X8 is a rumoured halo four-door coupe SUV from the Bavarian car manufacturer. Considering BMW already offers a feature-rich ultra-luxurious ",
+        "img": "https://imgd.aeplcdn.com/664x374/n/cw/ec/47349/bmw-x8-left-side-view0.jpeg?q=85"
+    },
+    {
+        "id": 7,
+        "name": "BMW 2 Series",
+        "price": "$30k",
+        "Color": "2hr",
+        "detail": "After a long wait, BMW has finally revealed the 2 Series Gran Coupe. Not to be confused as a 2 Series Coupe with two extra doors.",
+        "img": "https://imgd.aeplcdn.com/664x374/n/cw/ec/48034/2-series-gran-coupe-exterior-right-front-three-quarter.jpeg?q=85"
+    },
+    {
+        "id": 8,
+        "name": "BMW 3 Series",
+        "price": "$35k",
+        "Color": "2hr",
+        "detail": "The Gran Limousine version was initially showcased at the Auto Shanghai 2019 and was to be developed for the Chinese market. ",
+        "img": "https://imgd.aeplcdn.com/664x374/n/cw/ec/52639/3-series-gran-limousine-exterior-right-front-three-quarter-2.jpeg?q=85"
+    },
+    {
+        "id": 9,
+        "name": "BMW 5 Series",
+        "price": "$50k",
+        "Color": "2hr",
+        "detail": "BMW has launched the facelifted 5 Series in India. Unveiled in May last year, the refreshed model is available in three variants.",
+        "img": "https://imgd.aeplcdn.com/664x374/n/cw/ec/96443/5-series-exterior-right-front-three-quarter-4.jpeg?q=85"
+    },
+    {
+        "id": 10,
+        "name": "BMW 7 Series",
+        "price": "$65k",
+        "Color": "2hr",
+        "detail": "The new BMW 7 Series gets bespoke leather upholstery and trims, improved sound insulation, ambient lighting, ambient air package and a panoramic glass roof sky lounge with LED light graphics to create that perfect ambience.",
+        "img": "https://imgd.aeplcdn.com/664x374/cw/ec/38113/BMW-7-Series-Right-Front-Three-Quarter-164132.jpg?wm=0&q=85"
+    }
+]
