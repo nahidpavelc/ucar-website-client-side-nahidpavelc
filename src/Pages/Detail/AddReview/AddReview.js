@@ -13,6 +13,10 @@ const AddReview = () => {
         console.log(data);
         axios.post('https://sleepy-ravine-27110.herokuapp.com/reviews', data)
             .then(res => {
+                if (document.getElementById("outlined-multiline-static").value.length == 0) {
+                    alert("Write a Review")
+                    return false;
+                }
                 if (res.data.insertedId) {
                     alert('added successfully');
                     reset();
@@ -21,10 +25,8 @@ const AddReview = () => {
     }
 
     return (
-        <div className="add-service">
-            <Typography variant="h4" gutterBottom component="div">
-                Review
-            </Typography>
+        <div className="add-review" >
+            <h2 className="m-5">REVIEW</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <TextField
                     sx={{ width: '50%', m: 1 }}

@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import new1 from '../../../Images/news (2).jpg';
 import new2 from '../../../Images/news (3).jpg';
 import new3 from '../../../Images/news (4).jpg';
+import './News.css'
 
 const News = () => {
     return (
@@ -17,7 +18,7 @@ const News = () => {
                 Blog
             </Typography>
             <Grid container spacing={2}>
-                <Grid item xs={12} sm={6} md={4}>
+                <Grid className='newsPosition' item xs={12} sm={6} md={4}>
                     <Card sx={{ maxWidth: 345 }}>
                         <CardMedia
                             component="img"
@@ -38,7 +39,7 @@ const News = () => {
                         </CardActions>
                     </Card>
                 </Grid>
-                <Grid item xs={12} sm={6} md={4} >
+                <Grid className='newsPosition' item xs={12} sm={6} md={4} >
                     <Card sx={{ maxWidth: 345 }}>
                         <CardMedia
                             component="img"
@@ -59,7 +60,7 @@ const News = () => {
                         </CardActions>
                     </Card>
                 </Grid>
-                <Grid item xs={12} sm={6} md={4}>
+                <Grid className='newsPosition' item xs={12} sm={6} md={4}>
                     <Card sx={{ maxWidth: 345 }}>
                         <CardMedia
                             component="img"

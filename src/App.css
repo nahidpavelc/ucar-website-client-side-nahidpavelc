@@ -1,6 +1,8 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
+/* body { padding-right: 0 !important } */
+
 NavLink{
   text-decoration: none;
 }

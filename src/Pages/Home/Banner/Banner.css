@@ -1,15 +1,31 @@
 #header1 {
-    background: #664c8f;
-    background-image: url(../../../Images/Banner1.jpg);
+    background: #000000;
+    background-image: url(../../../Images/Banner1.png);
+    background-repeat: no-repeat;
+    background-color: #2e353d;
+    height:80vh;
+    width: 100%;
+    background-position:center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #664c8f;
-    height: auto;
-    width: auto;
-    padding: 200px 100px
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#header1 #banner-btn {
+    padding-top: 10px;
 }
 #h1 {
-    color: #df7442;
-    font-family: Arial;
     text-align: center;
+    text-align: center;
+    width: 100%;
+    color: #1565C0;
+    font-family: Arial;
+}
+#banner-btn{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }

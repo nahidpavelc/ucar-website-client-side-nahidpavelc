@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import { Alert, Container, Typography } from '@mui/material';
+import { Alert, Container, Typography, CircularProgress } from '@mui/material';
 import Product from '../Product/Product';
+import useAuth from '../../../hooks/useAuth';
+import Loader from '../../Shared/Loader/Loader';
 
 
 const Products = () => {
     const [bookingSuccess, setBookingSuccess] = useState(false);
     const [products, setProducts] = useState([])
+    const { loading } = useAuth();
 
     useEffect(() => {
         fetch('https://sleepy-ravine-27110.herokuapp.com/cars')
@@ -23,8 +26,9 @@ const Products = () => {
             <Typography variant="h6" gutterBottom component="div">
 
             </Typography>
-            {bookingSuccess && <Alert severity="success">Order Confirmed</Alert>}
-            <Box sx={{ flexGrow: 1 }}>
+            {/* {bookingSuccess && <Alert severity="success">Order Confirmed</Alert>} */}
+            {loading && <Loader />}
+            {!loading && <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                     {
                         products.map(product => <Product
@@ -34,7 +38,9 @@ const Products = () => {
                         ></Product>)
                     }
                 </Grid>
-            </Box>
+            </Box>}
+
+
         </Container >
     );
 };

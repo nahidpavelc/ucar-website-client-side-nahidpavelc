@@ -4,6 +4,7 @@ import { NavLink, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import login from "../../../Images/login.png"
 import Header from '../../Shared/Header/Header';
+import Navigation from '../../Shared/Header/Navigation';
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
@@ -29,8 +30,8 @@ const Register = () => {
 
     return (
         <>
-            <Header></Header>
-            <Container>
+            <Navigation />
+            <Container sx={{ textAlign: 'center', }}>
                 <Grid container spacing={2}>
                     <Grid item sx={{ mt: 8 }} xs={12} md={6}>
                         <Typography variant="h4" gutterBottom>Register</Typography>
@@ -66,13 +67,13 @@ const Register = () => {
                                 type="password"
                                 name="password2"
                                 onBlur={handleOnBlur}
-                                autoComplete="current-password" />
+                                autoComplete="current-password" /><br />
 
                             <NavLink
                                 style={{ textDecoration: "none" }}
                                 to="/login">
                                 <Button variant="text">Already Registered? Please Login</Button>
-                            </NavLink>
+                            </NavLink><br />
                             <Button type="submit" variant="contained" sx={{ width: "60%", m: 1 }}>Register</Button>
                         </form>}
 

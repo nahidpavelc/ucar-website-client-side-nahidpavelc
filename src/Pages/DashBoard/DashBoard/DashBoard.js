@@ -22,7 +22,6 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import DashboardHome from '../DashboardHome/DashboardHome';
 import AddCar from '../AddCar/AddCar';
 import BookmarkAddedIcon from '@mui/icons-material/BookmarkAdded';
-import DashboardIcon from '@mui/icons-material/Dashboard';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import CheckIcon from '@mui/icons-material/Check';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
@@ -31,12 +30,8 @@ import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import LogoutIcon from '@mui/icons-material/Logout';
 import DashReview from '../DashReview/DashReview';
-import PaymentIcon from '@mui/icons-material/Payment';
-import Payment from '../Payment/Payment';
 import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
-import ManageProducts from '../ManageProducts/ManageProducts';
 import EventAvailableIcon from '@mui/icons-material/EventAvailable';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const drawerWidth = 220;
 
@@ -59,14 +54,10 @@ function DashBoard(props) {
                     <Button variant="text" size="large" startIcon={<BookmarkAddedIcon />}>New Booking</Button>
                 </Link><Divider />
                 <Link style={{ textDecoration: "none", color: 'white' }} to={`${url}`}>
-                    <Button variant="text" size="large" startIcon={<CheckIcon />}>My Order</Button>
-                </Link><Divider />
-                <Link style={{ textDecoration: "none", color: 'white' }} to={`${url}/DashReview`}>
-                    <Button variant="text" size="large" startIcon={<BorderColorIcon />}>Review</Button>
-                </Link><Divider />
-                <Link style={{ textDecoration: "none", color: 'white' }} to={`${url}/payment`}>
-                    <Button variant="text" size="large" startIcon={<PaymentIcon />}>Payment</Button>
-                </Link><Divider />
+                    <Button variant="text" size="large" startIcon={<CheckIcon />}>My Orders</Button>
+                </Link>
+
+                <Divider />
                 <Divider />
                 <Divider />
                 <Divider />
@@ -76,15 +67,19 @@ function DashBoard(props) {
                     <Link style={{ textDecoration: "none", color: 'white' }} to={`${url}/makeAdmin`}>
                         <Button variant="text" size="large" startIcon={<PersonAddIcon />}>Make Admin</Button>
                     </Link><Divider />
+
+                    <Link style={{ textDecoration: "none", color: 'white' }} to={`${url}/DashReview`}>
+                        <Button variant="text" size="large" startIcon={<BorderColorIcon />}>Manage Review</Button>
+                    </Link><Divider />
+
                     <Link style={{ textDecoration: "none", color: 'white' }} to={`${url}/manageallorders`}>
-                        <Button variant="text" size="large" startIcon={<EventAvailableIcon />}>Manage Orders</Button>
+                        <Button variant="text" size="large" startIcon={<AddShoppingCartIcon />}>Manage Orders</Button>
                     </Link><Divider />
+
                     <Link style={{ textDecoration: "none", color: 'white' }} to={`${url}/addcar`}>
-                        <Button variant="text" size="large" startIcon={<AddShoppingCartIcon />}>Add Product</Button>
+                        <Button variant="text" size="large" startIcon={<EventAvailableIcon />}>Manage Product</Button>
                     </Link><Divider />
-                    <Link style={{ textDecoration: "none", color: 'white' }} to={`${url}/manageproducts`}>
-                        <Button variant="text" size="large" startIcon={<ShoppingCartIcon />}>Manage Products</Button>
-                    </Link><Divider />
+
                 </Box>}
 
                 <Link style={{ textDecoration: "none", color: 'white' }} to={`${url}/home`}>
@@ -168,9 +163,6 @@ function DashBoard(props) {
                     <Route path={`${path}/DashReview`}>
                         <DashReview></DashReview>
                     </Route>
-                    <Route path={`${path}/payment`}>
-                        <Payment></Payment>
-                    </Route>
 
                     {/* Admin Route */}
                     <AdminRoute path={`${path}/makeAdmin`}>
@@ -182,9 +174,7 @@ function DashBoard(props) {
                     <AdminRoute path={`${path}/addCar`}>
                         <AddCar></AddCar>
                     </AdminRoute>
-                    <AdminRoute path={`${path}/manageproducts`}>
-                        <ManageProducts></ManageProducts>
-                    </AdminRoute>
+
                 </Switch>
 
 

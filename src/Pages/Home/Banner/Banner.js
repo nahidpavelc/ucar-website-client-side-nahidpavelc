@@ -9,9 +9,10 @@ const Banner = () => {
     return (
         <div>
             <div id="header1">
-                <h1 id="h1">Explore Our latest Collection</h1>
-                <Link to="/allcars" id="download"><Button variant="contained">Latest Cars</Button></Link>
+                <h1 id="h1"> <spam id="span">Explore Our latest Collection</spam></h1>
+                <Link to="/allcars" id="banner-btn"><Button variant="contained">Latest Cars</Button></Link>
             </div>
+
         </div>
     );
 };

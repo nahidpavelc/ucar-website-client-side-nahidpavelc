@@ -4,13 +4,14 @@ import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import login from "../../../Images/login.png"
 import Header from '../../Shared/Header/Header';
+import Navigation from '../../Shared/Header/Navigation';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({})
 
     const { user, loginUser, registerUser, signInWithGoogle, loading, authError } = useAuth();
 
-    //location & history for Private Route
+    //location & history for Private Route Redirect
     const location = useLocation();
     const history = useHistory();
 
@@ -35,8 +36,8 @@ const Login = () => {
 
     return (
         <>
-            <Header></Header>
-            <Container>
+            <Navigation />
+            <Container sx={{ textAlign: 'center', }}>
                 <Grid container spacing={2}>
                     <Grid item sx={{ mt: 8 }} xs={12} md={6}>
                         <Typography variant="h4" gutterBottom>Login</Typography>
@@ -57,12 +58,13 @@ const Login = () => {
                                 type="password"
                                 name="password"
                                 onChange={handleOnChange}
-                                autoComplete="current-password" />
+                                autoComplete="current-password" /><br />
                             <NavLink
                                 style={{ textDecoration: "none" }}
                                 to="/register">
                                 <Button variant="text">New User? Please Register</Button>
-                            </NavLink>
+                            </NavLink><br />
+
                             <Button type="submit" variant="contained" sx={{ width: "60%", m: 1 }}>Login</Button>
 
                             <Button onClick={hangleGoogleSignIn} type="submit" variant="contained" sx={{ width: "60%", m: 1 }}>Google Sign In</Button>

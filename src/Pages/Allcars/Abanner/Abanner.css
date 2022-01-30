@@ -1,15 +1,33 @@
 #header2 {
-    background: #664c8f;
-    background-image: url(../../../Images/allcar.jpg);
+    background: #3525c0;
+    background-image: url(../../../Images/allcar.png);
+    background-repeat: no-repeat;
+    background-color: #2a323a;
+    height:80vh;
+    width: 100%;
+    background-position:center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #664c8f;
-    height: auto;
-    width: auto;
-    padding: 200px 100px
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-#allcar{
-    color: #ffffff;
+#header2 #allcar{
     font-family: Arial;
     text-align: center;
+    
+}
+#allcar #p{
+    padding-top: 15px;
+}
+#h1 #span{
+    background-color: #ffffff;
+    padding: 5px 15px;
+    border-radius: 4px;
+}
+#p #span{
+    background-color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 4px;
 }

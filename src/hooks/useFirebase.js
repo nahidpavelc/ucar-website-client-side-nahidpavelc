@@ -1,6 +1,7 @@
 import initializeFirebase from "../Pages/Login/Firebase/firebase.init"
 import { useEffect, useState } from "react";
 import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword, GoogleAuthProvider, updateProfile, signInWithPopup, getIdToken } from "firebase/auth";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 // initialize Firebase app
 initializeFirebase();
@@ -11,6 +12,8 @@ const useFirebase = () => {
     const [authError, setAuthError] = useState('');
     const [admin, setAdmin] = useState(false);
     const [token, setToken] = useState('');
+
+    // let history = useHistory();
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -41,13 +44,15 @@ const useFirebase = () => {
             .finally(() => setLoading(false));
     }
 
+    //Login with Email
     const loginUser = (email, password, location, history) => {
         setLoading(true)
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
+
                 //Private Route redirect
-                // const destination = location?.state?.from || '/';
-                // history.push(destination);
+                const destination = location?.state?.from || '/';
+                history.replace(destination);
                 setAuthError('');
             })
             .catch((error) => {
@@ -56,20 +61,20 @@ const useFirebase = () => {
             .finally(() => setLoading(false));
     }
 
-    //SIGNIN WITH Google
+    //Sign-in WITH Google
     const signInWithGoogle = (location, history) => {
         setLoading(true);
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 const user = result.user;
-                setAuthError('');
                 //save user to database
                 saveUser(user.email, user.displayName, 'PUT');
                 // saveGoogleUser(user.email, user.displayName);
-                //Private Route redirect
 
-                // const destination = location?.state?.from || '/';
-                // history.push(destination);
+                //Private Route redirect
+                const destination = location?.state?.from || '/';
+                history.replace(destination);
+                setAuthError('');
 
             }).catch((error) => {
                 setAuthError(error.message);

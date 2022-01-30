@@ -1,14 +1,12 @@
-import { Button, Container, Grid, MenuItem, Paper, TextField } from '@mui/material';
+import { Button, Container, Grid, MenuItem, OutlinedInput, Paper, Select, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import AddReview from './AddReview/AddReview';
-import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
 import useAuth from '../../hooks/useAuth';
-import Header from '../Shared/Header/Header';
+import Navigation from '../Shared/Header/Navigation';
 
 
 const style = {
@@ -68,6 +66,37 @@ const Detail = () => {
         setBooking(newInfo);
     }
     const handleBookSubmit = e => {
+        if (document.getElementById("color").value == '') {
+            e.preventDefault();
+            alert("Input color")
+            return false;
+        }
+        if (document.getElementById("address").value.length == 0) {
+            e.preventDefault();
+            alert("Input Address")
+            return false;
+        }
+        if (document.getElementById("phone").value.length == 0) {
+            e.preventDefault();
+            alert("Input Mobile No")
+            return false;
+        }
+        if (document.getElementById("nid").value.length == 0) {
+            e.preventDefault();
+            alert("Input NID No")
+            return false;
+        }
+        if (document.getElementById("passport").value.length == 0) {
+            e.preventDefault();
+            alert("Input Passport No")
+            return false;
+        }
+        if (document.getElementById("bankacc").value.length == 0) {
+            e.preventDefault();
+            alert("Input Address")
+            return false;
+        }
+
         alert('Confirmed Order');
         //collect data
         const allBooking = {
@@ -90,18 +119,20 @@ const Detail = () => {
                     // handleClose();
                 }
             })
+        document.getElementById("form").reset()
         e.preventDefault();
+
     }
 
 
     return (
         <>
-            <Header></Header>
+            <Navigation></Navigation>
             <Container sx={{ mt: 5, mb: 5 }}>
                 <Grid container spacing={2}>
                     <Grid item xs={8}>
-                        <Paper sx={{ maxWidth: "100%" }}>
-                            <Paper>
+                        <Paper sx={{ maxWidth: "100%", boxShadow: 'none' }}>
+                            <Paper sx={{ boxShadow: 'none' }}>
                                 <CardMedia
                                     component="img"
                                     height="auto"
@@ -121,19 +152,22 @@ const Detail = () => {
                     </Grid>
 
                     <Grid item xs={4}>
-                        <Typography variant="h5" gutterBottom component="div">
+                        <Typography variant="h5" gutterBottom component="div" sx={{ color: '#1976D2' }}>
                             Booking Now
                         </Typography>
-                        <form onSubmit={handleBookSubmit}>
+                        <form id='form' onSubmit={handleBookSubmit}>
+
                             <TextField
-                                id="outlined-select-color"
-                                select
-                                sx={{ width: '90%', m: 1 }}
+                                // label="Size"
+                                sx={{ width: '90%', m: 1, color: 'darkblue' }}
+                                id="color"
                                 label="Color"
+                                // size="small"
                                 value={color}
-                                onChange={handleChange}
                                 name="color"
                                 onBlur={handleOnBlur}
+                                select
+                                onChange={handleChange}
                             >
                                 {colors.map((option) => (
                                     <MenuItem key={option.value} value={option.value}>
@@ -141,10 +175,11 @@ const Detail = () => {
                                     </MenuItem>
                                 ))}
                             </TextField>
+
                             <TextField
                                 // label="Size"
                                 sx={{ width: '90%', m: 1 }}
-                                id="outlined-size-small"
+                                id="name"
                                 defaultValue={user.displayName}
                                 size="small"
                                 name="name"
@@ -154,7 +189,7 @@ const Detail = () => {
                             <TextField
                                 // label="Size"
                                 sx={{ width: '90%', m: 1 }}
-                                id="outlined-size-small"
+                                id="email"
                                 defaultValue={user.email}
                                 size="small"
                                 name="email"
@@ -164,16 +199,16 @@ const Detail = () => {
                             <TextField
                                 // label="Size"
                                 sx={{ width: '90%', m: 1 }}
-                                id="outlined-size-small"
+                                id="address"
                                 size="large"
-                                name="email"
+                                name="address"
                                 label="Address"
                                 onBlur={handleOnBlur}
                             />
                             <TextField
                                 // label="Size"
                                 sx={{ width: '90%', m: 1 }}
-                                id="outlined-size-small"
+                                id="phone"
                                 label="Mobile No"
                                 size="small"
                                 name="phone"
@@ -182,7 +217,7 @@ const Detail = () => {
                             <TextField
                                 // label="Size"
                                 sx={{ width: '90%', m: 1 }}
-                                id="outlined-size-small"
+                                id="nid"
                                 label="National Id"
                                 size="small"
                                 name="nid"
@@ -191,7 +226,7 @@ const Detail = () => {
                             <TextField
                                 // label="Size"
                                 sx={{ width: '90%', m: 1 }}
-                                id="outlined-size-small"
+                                id="passport"
                                 label="Passport No"
                                 size="small"
                                 name="passport"
@@ -200,13 +235,17 @@ const Detail = () => {
                             <TextField
                                 // label="Size"
                                 sx={{ width: '90%', m: 1 }}
-                                id="outlined-size-small"
+                                id="bankacc"
                                 label="Account No"
                                 size="small"
                                 name="bankacc"
                                 onBlur={handleOnBlur}
                             />
-                            <Button type="submit" variant="contained">Confirm Booking</Button>
+                            <Button
+                                type="submit"
+                                variant="contained"
+                                onProgress={() => this.setState({ name: 'random' })}
+                            >Confirm Booking</Button>
                         </form>
                     </Grid>
                 </Grid>

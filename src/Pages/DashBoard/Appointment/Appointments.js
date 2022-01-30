@@ -72,7 +72,7 @@ const Appointments = () => {
                                 <TableCell >{order.color}</TableCell>
                                 <TableCell >{order.name}</TableCell>
                                 <TableCell >{order.email}</TableCell>
-                                <TableCell >{order._id}</TableCell>
+                                <TableCell >{order.phone}</TableCell>
 
                                 {/* <TableCell >
                                     <Chip label="Confirm" variant="outlined" onClick={handleConfirm} />

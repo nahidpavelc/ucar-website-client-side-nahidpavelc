@@ -5,10 +5,10 @@ import './Abanner.css';
 
 const Abanner = () => {
     return (
-        <div>
-            <div id="header2">
-                <h1 id="allcar">All New BMW </h1>
-                <p id="allcar">Meet The Best !</p>
+        <div id="header2">
+            <div id="allcar">
+                <h1 id="h1" > <span id="span">All New BMW</span> </h1>
+                <p id="p"><span id="span"> Meet The Best !</span></p>
             </div>
         </div>
     );

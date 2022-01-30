@@ -16,6 +16,8 @@ import AuthProvider from './context/Authprovider/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRouter/PrivateRoute';
 import DashBoard from './Pages/DashBoard/DashBoard/DashBoard';
 import BookingModal from './Pages/Allcars/BookingModal/BookingModal';
+import About from './Pages/About/About';
+import Loader from './Pages/Shared/Loader/Loader';
 
 
 function App() {
@@ -30,8 +32,14 @@ function App() {
             <Route path="/home">
               <Home />
             </Route>
+            <Route path="/about">
+              <About />
+            </Route>
             <Route path="/Allcars">
               <Allcars />
+            </Route>
+            <Route path="/loader">
+              <Loader />
             </Route>
 
             {/* Dynamic Route  */}

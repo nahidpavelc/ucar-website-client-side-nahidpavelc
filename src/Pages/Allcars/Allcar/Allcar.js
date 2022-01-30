@@ -18,20 +18,20 @@ const Allcar = ({ product, setBookingSuccess }) => {
 
     return (
         <>
-            <Grid item xs={4} sm={4} md={4}>
+            <Grid className='cardPosition' item xs={4} sm={4} md={4}>
                 <Card sx={{ maxWidth: 345, boxShadow: 3 }}>
                     <CardMedia
                         component="img"
-                        height="140"
-                        image={img}
-                        alt="green iguana"
+                        height="170"
+                        image={`data:image/jpeg;base64,${img}`}
+                        alt="Our Car"
                     />
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="div">
                             {name}
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
-                            {detail.slice(0, 40)}
+                            {detail.slice(0, 55)}
                         </Typography>
                     </CardContent>
                     <CardActions>

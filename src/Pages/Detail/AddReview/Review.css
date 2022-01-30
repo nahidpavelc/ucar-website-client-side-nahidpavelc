@@ -1,12 +1,17 @@
-.add-service form{
+.add-review{
+    background-color: rgb(196, 228, 255);
+}
+.add-review form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
     
 }
-.add-service form input, textarea{
-    width: 50%;
+.add-review form input, textarea{
+    justify-content: center;
+    width: 100%;
     margin-bottom: 10px;
     border-radius: 10px;
     color: blueviolet;
@@ -16,8 +21,14 @@ input{
     border-width: 2px;
     border-radius: 10px;
     border-color: rgb(16, 150, 3);
-    
 }
 textarea{
     height: 50px;
+}
+.m-5{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: #1976D2;
 }

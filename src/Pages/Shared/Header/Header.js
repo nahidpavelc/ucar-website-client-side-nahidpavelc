@@ -31,7 +31,7 @@ const Header = () => {
                             <Button color="inherit">Home</Button>
                         </NavLink>
                         <NavLink to="/allCars" style={{ textDecoration: "none", color: 'white' }}>
-                            <Button color="inherit">All Cars</Button>
+                            <Button color="inherit">Cars</Button>
                         </NavLink>
                     </Typography>
                     {

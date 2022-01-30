@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 import BookingModal from '../../Allcars/BookingModal/BookingModal';
+import './Product.css';
 
 const Product = ({ product, setBookingSuccess }) => {
     const [open, setOpen] = React.useState(false);
@@ -18,8 +19,8 @@ const Product = ({ product, setBookingSuccess }) => {
 
     return (
         <>
-            <Grid item xs={4} sm={4} md={4}>
-                <Card sx={{ maxWidth: 345, boxShadow: 3 }}>
+            <Grid className='cardPosition' sx={{ mx: "auto", width: "auto" }} item xs={4} sm={4} md={4}>
+                <Card sx={{ maxWidth: 345, boxShadow: 3 }} >
                     <CardMedia
                         component="img"
                         height="140"
@@ -31,7 +32,7 @@ const Product = ({ product, setBookingSuccess }) => {
                             {name}
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
-                            {detail.slice(0, 30)}
+                            {detail.slice(0, 55)}
                         </Typography>
                     </CardContent>
                     <CardActions>

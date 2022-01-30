@@ -3,6 +3,7 @@ import { Avatar, Card, CardContent, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 import useAuth from '../../../hooks/useAuth';
+import './ReviewCart.css'
 
 const ReviewCart = ({ userReview }) => {
     const { name, review } = userReview;
@@ -11,9 +12,9 @@ const ReviewCart = ({ userReview }) => {
 
     return (
         <>
-            <Grid item xs={4} sm={4} md={4}>
+            <Grid className='reviewPosition' item xs={4} sm={4} md={4}>
 
-                <Card sx={{ maxWidth: 345, boxShadow: 3 }}>
+                <Card sx={{ width: 345, boxShadow: 3 }}>
                     <CardContent>
                         <Box sx={{
                             display: 'flex',
