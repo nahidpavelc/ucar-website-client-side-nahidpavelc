@@ -32,6 +32,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import DashReview from '../DashReview/DashReview';
 import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import EventAvailableIcon from '@mui/icons-material/EventAvailable';
+import DashOrders from '../DashOrders/DashOrders';
 
 const drawerWidth = 220;
 
@@ -50,12 +51,15 @@ function DashBoard(props) {
             <Toolbar />
             <Divider />
             <List align="left">
+
                 <Link style={{ textDecoration: "none", color: 'white' }} to="/allcars">
                     <Button variant="text" size="large" startIcon={<BookmarkAddedIcon />}>New Booking</Button>
                 </Link><Divider />
-                <Link style={{ textDecoration: "none", color: 'white' }} to={`${url}`}>
+
+                <Link style={{ textDecoration: "none", color: 'white' }} to={`${url}/DashOrders`}>
                     <Button variant="text" size="large" startIcon={<CheckIcon />}>My Orders</Button>
-                </Link>
+                </Link><Divider />
+
 
                 <Divider />
                 <Divider />
@@ -85,8 +89,6 @@ function DashBoard(props) {
                 <Link style={{ textDecoration: "none", color: 'white' }} to={`${url}/home`}>
                     <Button onClick={logout} variant="text" size="large" startIcon={<LogoutIcon />}>Logout</Button>
                 </Link><Divider />
-
-
             </List>
         </div >
     );
@@ -158,21 +160,24 @@ function DashBoard(props) {
 
                 <Switch>
                     <Route exact path={`${path}`}>
-                        <DashboardHome></DashboardHome>
+                        <DashOrders />
                     </Route>
-                    <Route path={`${path}/DashReview`}>
-                        <DashReview></DashReview>
+                    <Route path={`${path}/DashOrders`}>
+                        <DashOrders />
                     </Route>
 
                     {/* Admin Route */}
                     <AdminRoute path={`${path}/makeAdmin`}>
-                        <MakeAdmin></MakeAdmin>
+                        <MakeAdmin />
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/DashReview`}>
+                        <DashReview />
                     </AdminRoute>
                     <AdminRoute path={`${path}/manageallorders`}>
-                        <ManageAllOrders></ManageAllOrders>
+                        <ManageAllOrders />
                     </AdminRoute>
                     <AdminRoute path={`${path}/addCar`}>
-                        <AddCar></AddCar>
+                        <AddCar />
                     </AdminRoute>
 
                 </Switch>

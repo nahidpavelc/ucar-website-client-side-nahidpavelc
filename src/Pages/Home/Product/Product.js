@@ -24,7 +24,7 @@ const Product = ({ product, setBookingSuccess }) => {
                     <CardMedia
                         component="img"
                         height="140"
-                        image={img}
+                        image={`data:image/jpeg;base64,${img}`}
                         alt="green iguana"
                     />
                     <CardContent>

@@ -32,7 +32,7 @@ const Products = () => {
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                     {
                         products.map(product => <Product
-                            key={product.id}
+                            key={product._id}
                             product={product}
                             setBookingSuccess={setBookingSuccess}
                         ></Product>)

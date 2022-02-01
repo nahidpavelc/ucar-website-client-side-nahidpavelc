@@ -44,6 +44,7 @@ const Detail = () => {
     const { user } = useAuth();
 
     const initialInfo = { color: '', name: user.displayName, email: user.email, phone: '', nid: '', passport: '', bankacc: '', }
+
     const [booking, setBooking] = useState(initialInfo);
 
     useEffect(() => {
@@ -136,7 +137,7 @@ const Detail = () => {
                                 <CardMedia
                                     component="img"
                                     height="auto"
-                                    image={img}
+                                    image={`data:image/jpeg;base64,${img}`}
                                     alt="Car Model"
                                 />
                                 <CardContent>

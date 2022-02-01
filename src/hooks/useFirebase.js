@@ -1,7 +1,6 @@
 import initializeFirebase from "../Pages/Login/Firebase/firebase.init"
 import { useEffect, useState } from "react";
 import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword, GoogleAuthProvider, updateProfile, signInWithPopup, getIdToken } from "firebase/auth";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 // initialize Firebase app
 initializeFirebase();
@@ -86,12 +85,11 @@ const useFirebase = () => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
-                setUser(user);
                 getIdToken(user)
-                    .then(idToken => {
-                        setToken(idToken)
-                    })
-            } else {
+                    .then(idToken => localStorage.setItem('idToken', idToken));
+                setUser(user);
+            }
+            else {
                 setUser({});
             }
             setLoading(false);
@@ -134,7 +132,7 @@ const useFirebase = () => {
     ////save/update Google user data to server
     // const saveGoogleUser = (email, name) => {
     //     const user = { email, name };
-    //     fetch('http://localhost:5000/users', {
+    //     fetch('https://localhost:5000/users', {
     //         method: 'PUT',
     //         headers: {
     //             'content-type': 'application/json'

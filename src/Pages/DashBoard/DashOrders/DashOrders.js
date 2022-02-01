@@ -1,22 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import useAuth from './../../../hooks/useAuth';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Tooltip } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { Button, Chip, IconButton, Tooltip } from '@mui/material';
+import Paper from '@mui/material/Paper';
+import React, { useEffect, useState } from 'react';
+import useAuth from '../../../hooks/useAuth';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
-const ManageAllOrders = () => {
-    const { user, token } = useAuth();
+const DashOrders = () => {
+    const { user } = useAuth();
     const [orders, setOrders] = useState([])
+    const history = useHistory();
 
-    // const handleConfirm = () => {
-    //     console.info('You clicked the Chip.');
-    // };
     const handleDelete = id => {
         fetch(`https://sleepy-ravine-27110.herokuapp.com/bookings/${id}`, {
             method: 'DELETE'
@@ -30,13 +23,8 @@ const ManageAllOrders = () => {
                 }
             })
     }
-
     useEffect(() => {
-        fetch(`https://sleepy-ravine-27110.herokuapp.com/bookings`, {
-            headers: {
-                'authorization': `Bearer ${token}`
-            }
-        })
+        fetch(`https://sleepy-ravine-27110.herokuapp.com/bookings?email=${user.email}`)
             .then(res => res.json())
             .then(data => setOrders(data));
 
@@ -89,4 +77,4 @@ const ManageAllOrders = () => {
     );
 };
 
-export default ManageAllOrders;
+export default DashOrders;

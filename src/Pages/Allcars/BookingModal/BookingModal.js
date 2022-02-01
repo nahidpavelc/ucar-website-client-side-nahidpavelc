@@ -38,7 +38,7 @@ const colors = [
 
 
 const BookingModal = ({ open, handleClose, product, setBookingSuccess }) => {
-    const { name, detail, img } = product;
+    const { name, img } = product;
     const { user } = useAuth();
 
     const initialInfo = { color: '', name: user.displayName, email: user.email, phone: '', nid: '', passport: '', bankacc: '', }
@@ -102,7 +102,7 @@ const BookingModal = ({ open, handleClose, product, setBookingSuccess }) => {
                             <CardMedia
                                 component="img"
                                 height="140"
-                                image={img}
+                                image={`data:image/jpeg;base64,${img}`}
                                 alt="green iguana"
                             />
                         </Card>

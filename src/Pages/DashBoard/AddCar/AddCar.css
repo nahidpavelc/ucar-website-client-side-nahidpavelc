@@ -1,12 +1,27 @@
 
-form{
+/* form{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+#add-car{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+}
+
+#add-car form{
+    display: flex;
     width: 50%;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-#add-car{
+.addCart{
+    margin-top: 20px;
+}
+.Add-car-Typo{
     display: flex;
     justify-content: center;
 }

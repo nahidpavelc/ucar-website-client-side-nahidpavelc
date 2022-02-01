@@ -1,4 +1,3 @@
-import { CallEnd } from '@mui/icons-material';
 import { Avatar, Card, CardContent, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';

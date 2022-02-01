@@ -3,7 +3,6 @@ import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
 import Footer from '../../Shared/Footer/Footer';
-import Header from '../../Shared/Header/Header';
 import Navigation from '../../Shared/Header/Navigation';
 import Loader from '../../Shared/Loader/Loader';
 import Abanner from '../Abanner/Abanner';
@@ -32,7 +31,7 @@ const Allcars = () => {
 
                 {bookingSuccess && <Alert severity="success">Order Confirmed</Alert>}
 
-                {loading && <Loader />}
+                {/* {loading && <Loader />} */}
                 {!loading && <Box sx={{ flexGrow: 1 }}>
                     <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                         {
@@ -44,7 +43,7 @@ const Allcars = () => {
                         }
                     </Grid>
                 </Box>}
-
+                {loading && <Loader />}
 
             </Container>
             <Footer></Footer>

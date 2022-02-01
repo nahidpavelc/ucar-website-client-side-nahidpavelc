@@ -11,9 +11,7 @@ import ReviewCart from '../ReviewCart/ReviewCart';
 
 const Review = () => {
     const [userReviews, setUserReviews] = useState([]);
-
     const { user } = useAuth();
-    console.log(user);
 
     useEffect(() => {
         fetch(`https://sleepy-ravine-27110.herokuapp.com/reviews`)

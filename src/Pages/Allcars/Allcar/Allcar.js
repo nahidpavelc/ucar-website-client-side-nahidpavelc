@@ -11,10 +11,10 @@ import BookingModal from '../../Allcars/BookingModal/BookingModal';
 
 const Allcar = ({ product, setBookingSuccess }) => {
     const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
+    // const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-    const { _id, name, detail, img } = product;
+    const { _id, name, detail, img, price } = product;
 
     return (
         <>
@@ -32,6 +32,9 @@ const Allcar = ({ product, setBookingSuccess }) => {
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
                             {detail.slice(0, 55)}
+                        </Typography>
+                        <Typography variant="body2" color="text.primary">
+                            Price: $ {price}
                         </Typography>
                     </CardContent>
                     <CardActions>
