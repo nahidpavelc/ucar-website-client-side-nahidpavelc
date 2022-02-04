@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Container, Grid } from '@mui/material';
 import ReviewCart from '../ReviewCart/ReviewCart';
+import Loader from '../../Shared/Loader/Loader';
 
 const Review = () => {
     const [userReviews, setUserReviews] = useState([]);
@@ -25,15 +26,21 @@ const Review = () => {
             <Typography variant="h3" gutterBottom component="div" sx={{ color: 'primary.main', mt: 5 }}>
                 User Reviews
             </Typography>
-            <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-                {
-                    userReviews.map(userReview => <ReviewCart
-                        key={userReview._id}
-                        userReview={userReview}
-                    ></ReviewCart>
-                    )
-                }
-            </Grid>
+
+            {userReviews.length === 0 ? (
+                <Loader />
+            ) : (
+                <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+                    {
+                        userReviews.map(userReview => <ReviewCart
+                            key={userReview._id}
+                            userReview={userReview}
+                        ></ReviewCart>
+                        )
+                    }
+                </Grid>
+            )}
+
         </Container>
     );
 };
