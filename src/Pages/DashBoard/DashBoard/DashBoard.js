@@ -166,18 +166,22 @@ function DashBoard(props) {
                     </Route>
 
                     {/* Admin Route */}
-                    <AdminRoute path={`${path}/makeAdmin`}>
+                    <Route path={`${path}/makeAdmin`}>
                         <MakeAdmin />
-                    </AdminRoute>
-                    <AdminRoute path={`${path}/DashReview`}>
+                    </Route>
+                    <Route path={`${path}/DashReview`}>
                         <DashReview />
-                    </AdminRoute>
-                    <AdminRoute path={`${path}/manageallorders`}>
+                    </Route>
+                    <Route path={`${path}/manageallorders`}>
                         <ManageAllOrders />
-                    </AdminRoute>
-                    <AdminRoute path={`${path}/addCar`}>
+                    </Route>
+                    <Route path={`${path}/addCar`}>
                         <AddCar />
-                    </AdminRoute>
+                    </Route>
+
+                    {/* <AdminRoute path={`${path}/addCar`}>
+                        <AddCar />
+                    </AdminRoute> */}
 
                 </Switch>
 
