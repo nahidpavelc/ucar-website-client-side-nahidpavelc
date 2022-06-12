@@ -54,10 +54,10 @@ function DashBoard(props) {
                 <Link style={{ textDecoration: "none", color: 'white' }} to="/allcars">
                     <Button variant="text" size="large" startIcon={<BookmarkAddedIcon />}>New Booking</Button>
                 </Link><Divider />
-
                 <Link style={{ textDecoration: "none", color: 'white' }} to={`${url}/DashOrders`}>
                     <Button variant="text" size="large" startIcon={<CheckIcon />}>My Orders</Button>
                 </Link><Divider />
+                
                 <Link style={{ textDecoration: "none", color: 'white' }} to={`${url}/makeAdmin`}>
                     <Button variant="text" size="large" startIcon={<PersonAddIcon />}>Make Admin</Button>
                 </Link><Divider />
