@@ -58,6 +58,21 @@ function DashBoard(props) {
                 <Link style={{ textDecoration: "none", color: 'white' }} to={`${url}/DashOrders`}>
                     <Button variant="text" size="large" startIcon={<CheckIcon />}>My Orders</Button>
                 </Link><Divider />
+                <Link style={{ textDecoration: "none", color: 'white' }} to={`${url}/makeAdmin`}>
+                    <Button variant="text" size="large" startIcon={<PersonAddIcon />}>Make Admin</Button>
+                </Link><Divider />
+
+                <Link style={{ textDecoration: "none", color: 'white' }} to={`${url}/DashReview`}>
+                    <Button variant="text" size="large" startIcon={<BorderColorIcon />}>Manage Review</Button>
+                </Link><Divider />
+
+                <Link style={{ textDecoration: "none", color: 'white' }} to={`${url}/manageallorders`}>
+                    <Button variant="text" size="large" startIcon={<AddShoppingCartIcon />}>Manage Orders</Button>
+                </Link><Divider />
+
+                <Link style={{ textDecoration: "none", color: 'white' }} to={`${url}/addcar`}>
+                    <Button variant="text" size="large" startIcon={<EventAvailableIcon />}>Manage Product</Button>
+                </Link><Divider />
 
 
                 <Divider />
@@ -66,7 +81,7 @@ function DashBoard(props) {
                 <Divider />
                 <Divider />
 
-                {admin && <Box>
+                {/* {admin && <Box>
                     <Link style={{ textDecoration: "none", color: 'white' }} to={`${url}/makeAdmin`}>
                         <Button variant="text" size="large" startIcon={<PersonAddIcon />}>Make Admin</Button>
                     </Link><Divider />
@@ -83,7 +98,7 @@ function DashBoard(props) {
                         <Button variant="text" size="large" startIcon={<EventAvailableIcon />}>Manage Product</Button>
                     </Link><Divider />
 
-                </Box>}
+                </Box>} */}
 
                 <Link style={{ textDecoration: "none", color: 'white' }} to={`${url}/home`}>
                     <Button onClick={logout} variant="text" size="large" startIcon={<LogoutIcon />}>Logout</Button>
@@ -165,7 +180,6 @@ function DashBoard(props) {
                         <DashOrders />
                     </Route>
 
-                    {/* Admin Route */}
                     <Route path={`${path}/makeAdmin`}>
                         <MakeAdmin />
                     </Route>
@@ -179,6 +193,7 @@ function DashBoard(props) {
                         <AddCar />
                     </Route>
 
+                    {/* Admin Route */}
                     {/* <AdminRoute path={`${path}/addCar`}>
                         <AddCar />
                     </AdminRoute> */}
