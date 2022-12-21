@@ -14,7 +14,7 @@ const Allcars = () => {
     // const { loading } = useAuth();
 
     useEffect(() => {
-        fetch('https://sleepy-ravine-27110.herokuapp.com/cars')
+        fetch('https://ucar-api-test.onrender.com/cars')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [])

@@ -18,7 +18,7 @@ const ManageAllOrders = () => {
     //     console.info('You clicked the Chip.');
     // };
     const handleDelete = id => {
-        fetch(`https://sleepy-ravine-27110.herokuapp.com/bookings/${id}`, {
+        fetch(`https://ucar-api-test.onrender.com/bookings/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -32,7 +32,7 @@ const ManageAllOrders = () => {
     }
 
     useEffect(() => {
-        fetch(`https://sleepy-ravine-27110.herokuapp.com/bookings`, {
+        fetch(`https://ucar-api-test.onrender.com/bookings`, {
             headers: {
                 'authorization': `Bearer ${token}`
             }

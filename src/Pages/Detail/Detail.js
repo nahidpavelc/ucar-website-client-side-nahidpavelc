@@ -48,7 +48,7 @@ const Detail = () => {
     const [booking, setBooking] = useState(initialInfo);
 
     useEffect(() => {
-        fetch(`https://sleepy-ravine-27110.herokuapp.com/cars/${productId}`)
+        fetch(`https://ucar-api-test.onrender.com/cars/${productId}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
@@ -106,7 +106,7 @@ const Detail = () => {
         }
 
         //SEnd to the Server
-        fetch('https://sleepy-ravine-27110.herokuapp.com/bookings', {
+        fetch('https://ucar-api-test.onrender.com/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

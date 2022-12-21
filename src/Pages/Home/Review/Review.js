@@ -15,7 +15,7 @@ const Review = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        fetch(`https://sleepy-ravine-27110.herokuapp.com/reviews`)
+        fetch(`https://ucar-api-test.onrender.com/reviews`)
             .then(res => res.json())
             .then(data => setUserReviews(data))
     }, [])

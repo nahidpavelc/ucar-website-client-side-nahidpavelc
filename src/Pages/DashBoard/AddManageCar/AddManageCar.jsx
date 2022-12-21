@@ -9,7 +9,7 @@ const AddManageCar = () => {
     const { loading } = useAuth();
 
     const handleDelete = id => {
-        fetch(`https://sleepy-ravine-27110.herokuapp.com/cars/${id}`, {
+        fetch(`https://ucar-api-test.onrender.com/cars/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -24,7 +24,7 @@ const AddManageCar = () => {
     }
 
     useEffect(() => {
-        fetch(`https://sleepy-ravine-27110.herokuapp.com/cars`)
+        fetch(`https://ucar-api-test.onrender.com/cars`)
             .then(res => res.json())
             .then(data => setCars(data));
     }, [])

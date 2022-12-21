@@ -18,7 +18,7 @@ const Appointments = () => {
     //     console.info('You clicked the Chip.');
     // };
     const handleDelete = id => {
-        fetch(`https://sleepy-ravine-27110.herokuapp.com/bookings/${id}`, {
+        fetch(`https://ucar-api-test.onrender.com/bookings/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -33,7 +33,7 @@ const Appointments = () => {
     }
 
     useEffect(() => {
-        const url = `https://sleepy-ravine-27110.herokuapp.com/bookings?email=${user.email}`
+        const url = `https://ucar-api-test.onrender.com/bookings?email=${user.email}`
         fetch(url, {
             headers: {
                 'authorization': `Bearer ${token}`

@@ -14,7 +14,7 @@ const AddReview = () => {
         formData.append('name', user.displayName);
         formData.append('review', review);
 
-        fetch('https://sleepy-ravine-27110.herokuapp.com/reviews', {
+        fetch('https://ucar-api-test.onrender.com/reviews', {
             method: 'POST',
             body: formData
         })

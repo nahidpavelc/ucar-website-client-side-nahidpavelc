@@ -22,7 +22,7 @@ const AddCar = () => {
         formData.append('price', price);
         formData.append('image', image);
 
-        fetch('https://sleepy-ravine-27110.herokuapp.com/cars', {
+        fetch('https://ucar-api-test.onrender.com/cars', {
             method: 'POST',
             body: formData
         })

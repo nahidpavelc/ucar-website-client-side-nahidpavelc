@@ -11,7 +11,7 @@ const DashOrders = () => {
     const history = useHistory();
 
     const handleDelete = id => {
-        fetch(`https://sleepy-ravine-27110.herokuapp.com/bookings/${id}`, {
+        fetch(`https://ucar-api-test.onrender.com/bookings/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -24,7 +24,7 @@ const DashOrders = () => {
             })
     }
     useEffect(() => {
-        fetch(`https://sleepy-ravine-27110.herokuapp.com/bookings?email=${user.email}`)
+        fetch(`https://ucar-api-test.onrender.com/bookings?email=${user.email}`)
             .then(res => res.json())
             .then(data => setOrders(data));
 

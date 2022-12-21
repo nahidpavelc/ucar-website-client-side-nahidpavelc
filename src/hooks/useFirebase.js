@@ -99,7 +99,7 @@ const useFirebase = () => {
 
     //Admin
     useEffect(() => {
-        fetch(`https://sleepy-ravine-27110.herokuapp.com/users/${user.email}`)
+        fetch(`https://ucar-api-test.onrender.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
@@ -119,7 +119,7 @@ const useFirebase = () => {
     const saveUser = (email, name, method) => {
         // const saveUser = (email, name) => {
         const user = { email, name };
-        fetch('https://sleepy-ravine-27110.herokuapp.com/users', {
+        fetch('https://ucar-api-test.onrender.com/users', {
             // method: method,
             method: method,
             headers: {

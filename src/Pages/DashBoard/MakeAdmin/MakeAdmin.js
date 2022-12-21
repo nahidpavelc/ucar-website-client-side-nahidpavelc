@@ -17,7 +17,7 @@ const MakeAdmin = () => {
     const handleAdminSubmit = e => {
         const user = { email };
 
-        fetch('https://sleepy-ravine-27110.herokuapp.com/admin', {
+        fetch('https://ucar-api-test.onrender.com/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,
