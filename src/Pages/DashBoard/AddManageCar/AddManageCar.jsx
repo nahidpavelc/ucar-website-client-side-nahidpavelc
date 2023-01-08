@@ -31,9 +31,9 @@ const AddManageCar = () => {
 
     return (
         <div>
-            {cars.length === 0 ? (
+            {/* {cars.length === 0 ? (
                 <Loader />
-            ) : (
+            ) : ( */}
                 <Box sx={{ flexGrow: 1 }}>
                     <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                         {
@@ -64,7 +64,7 @@ const AddManageCar = () => {
                         }
                     </Grid>
                 </Box>
-            )}
+            }
 
         </div>
     );
