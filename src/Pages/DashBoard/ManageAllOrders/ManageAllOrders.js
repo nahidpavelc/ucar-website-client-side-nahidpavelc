@@ -11,82 +11,82 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { Button, Chip, IconButton, Tooltip } from '@mui/material';
 
 const ManageAllOrders = () => {
-    const { user, token } = useAuth();
-    const [orders, setOrders] = useState([])
+  const { user, token } = useAuth();
+  const [orders, setOrders] = useState([])
 
-    // const handleConfirm = () => {
-    //     console.info('You clicked the Chip.');
-    // };
-    const handleDelete = id => {
-        fetch(`https://ucar-api-test.onrender.com/bookings/${id}`, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount) {
-                    alert('Deleted')
-                    const remaining = orders.filter(order => order._id !== id)
-                    setOrders(remaining);
-                }
-            })
-    }
+  // const handleConfirm = () => {
+  //     console.info('You clicked the Chip.');
+  // };
+  const handleDelete = id => {
+    fetch(`https://car-shop-server-side-nahidpavelc.vercel.app/bookings/${id}`, {
+      method: 'DELETE'
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.deletedCount) {
+          alert('Deleted')
+          const remaining = orders.filter(order => order._id !== id)
+          setOrders(remaining);
+        }
+      })
+  }
 
-    useEffect(() => {
-        fetch(`https://ucar-api-test.onrender.com/bookings`, {
-            headers: {
-                'authorization': `Bearer ${token}`
-            }
-        })
-            .then(res => res.json())
-            .then(data => setOrders(data));
+  useEffect(() => {
+    fetch(`https://car-shop-server-side-nahidpavelc.vercel.app/bookings`, {
+      headers: {
+        'authorization': `Bearer ${token}`
+      }
+    })
+      .then(res => res.json())
+      .then(data => setOrders(data));
 
-    }, [])
+  }, [])
 
-    return (
-        <div>
-            <h2>Your Total Order: {orders.length}</h2>
+  return (
+    <div>
+      <h2>Your Total Order: {orders.length}</h2>
 
 
-            <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                    <TableHead>
-                        <TableRow>
-                            <TableCell> Car Model </TableCell>
-                            <TableCell> Color </TableCell>
-                            <TableCell> Client </TableCell>
-                            <TableCell> Email </TableCell>
-                            <TableCell> Phone </TableCell>
-                            {/* <TableCell> Confirm </TableCell> */}
-                            <TableCell> Delete </TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {orders.map((order) => (
-                            <TableRow
-                                key={order._id}
-                            // sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                            >
-                                <TableCell component="th" scope="row">{order.model}</TableCell>
-                                <TableCell >{order.color}</TableCell>
-                                <TableCell >{order.name}</TableCell>
-                                <TableCell >{order.email}</TableCell>
-                                <TableCell >{order.phone}</TableCell>
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell> Car Model </TableCell>
+              <TableCell> Color </TableCell>
+              <TableCell> Client </TableCell>
+              <TableCell> Email </TableCell>
+              <TableCell> Phone </TableCell>
+              {/* <TableCell> Confirm </TableCell> */}
+              <TableCell> Delete </TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {orders.map((order) => (
+              <TableRow
+                key={order._id}
+              // sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              >
+                <TableCell component="th" scope="row">{order.model}</TableCell>
+                <TableCell >{order.color}</TableCell>
+                <TableCell >{order.name}</TableCell>
+                <TableCell >{order.email}</TableCell>
+                <TableCell >{order.phone}</TableCell>
 
-                                {/* <TableCell >
+                {/* <TableCell >
                         <Chip label="Confirm" variant="outlined" onClick={handleConfirm} />
                     </TableCell> */}
 
-                                <TableCell ><Tooltip title="Delete">
-                                    <Button variant="text" onClick={() => handleDelete(order._id)}><DeleteIcon /></Button>
-                                </Tooltip></TableCell>
+                <TableCell ><Tooltip title="Delete">
+                  <Button variant="text" onClick={() => handleDelete(order._id)}><DeleteIcon /></Button>
+                </Tooltip></TableCell>
 
-                            </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </div>
-    );
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </div>
+  );
 };
 
 export default ManageAllOrders;

@@ -18,7 +18,7 @@ const DashReview = () => {
     //     console.info('You clicked the Chip.');
     // };
     const handleDelete = id => {
-        fetch(`https://ucar-api-test.onrender.com/reviews/${id}`, {
+        fetch(`https://car-shop-server-side-nahidpavelc.vercel.app/reviews/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -33,7 +33,7 @@ const DashReview = () => {
     }
 
     useEffect(() => {
-        const url = `https://ucar-api-test.onrender.com/reviews?email=${user.email}`
+        const url = `https://car-shop-server-side-nahidpavelc.vercel.app/reviews?email=${user.email}`
         fetch(url, {
             headers: {
                 'authorization': `Bearer ${token}`

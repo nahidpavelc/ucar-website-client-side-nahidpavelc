@@ -22,7 +22,7 @@ const AddCar = () => {
         formData.append('price', price);
         formData.append('image', image);
 
-        fetch('https://ucar-api-test.onrender.com/cars', {
+        fetch('https://car-shop-server-side-nahidpavelc.vercel.app/cars', {
             method: 'POST',
             body: formData
         })

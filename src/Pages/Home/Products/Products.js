@@ -13,7 +13,7 @@ const Products = () => {
   const { loading } = useAuth();
 
   useEffect(() => {
-    fetch('https://ucar-api-test.onrender.com/cars')
+    fetch('https://car-shop-server-side-nahidpavelc.vercel.app/cars')
       .then(res => res.json())
       .then(data => setProducts(data.slice(0, 6)));
   }, [])
@@ -28,11 +28,11 @@ const Products = () => {
       </Typography>
       {/* {bookingSuccess && <Alert severity="success">Order Confirmed</Alert>} */}
 
-      {/* {products.length === 0 ? (
+       { products.length === 0 ? (
                 <div>
                     <Loader />
                 </div>
-            ) : ( */
+            ) : ( 
         <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
             {
@@ -44,7 +44,7 @@ const Products = () => {
             }
           </Grid>
         </Box>
-      }
+      )}
 
 
     </Container >

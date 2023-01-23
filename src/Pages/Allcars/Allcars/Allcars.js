@@ -9,48 +9,50 @@ import Abanner from '../Abanner/Abanner';
 import Allcar from '../Allcar/Allcar';
 
 const Allcars = () => {
-    const [bookingSuccess, setBookingSuccess] = useState(false);
-    const [products, setProducts] = useState([])
-    // const { loading } = useAuth();
+  const [bookingSuccess, setBookingSuccess] = useState(false);
+  const [products, setProducts] = useState([])
+  // const { loading } = useAuth();
 
-    useEffect(() => {
-        fetch('https://ucar-api-test.onrender.com/cars')
-            .then(res => res.json())
-            .then(data => setProducts(data));
-    }, [])
+  useEffect(() => {
+    fetch('https://car-shop-server-side-nahidpavelc.vercel.app/cars')
+      .then(res => res.json())
+      .then(data => setProducts(data));
+  }, [])
 
-    return (
-        <div>
-            {/* <Header></Header> */}
-            <Navigation />
-            <Abanner></Abanner>
-            <Container>
-                <Typography variant="h3" gutterBottom component="div" sx={{ color: 'primary.main', mt: 5 }}>
-                    All Models
-                </Typography>
+  return (
+    <div>
+      {/* <Header></Header> */}
+      <Navigation />
+      <Abanner></Abanner>
+      <Container>
+        <Typography variant="h3" gutterBottom component="div" sx={{ color: 'primary.main', mt: 5 }}>
+          All Models
+        </Typography>
 
-                {bookingSuccess && <Alert severity="success">Order Confirmed</Alert>}
+        {bookingSuccess && <Alert severity="success">Order Confirmed</Alert>}
 
-                {/* {products.length === 0 ? (
-                    <Loader />
-                ) : ( */
-                    <Box sx={{ flexGrow: 1 }}>
-                        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-                            {
-                                products.map(product => <Allcar
-                                    key={product.id}
-                                    product={product}
-                                    setBookingSuccess={setBookingSuccess}
-                                ></Allcar>)
-                            }
-                        </Grid>
-                    </Box>
+        {
+          products.length === 0 ? (
+            <Loader />
+          ) : (
+            <Box sx={{ flexGrow: 1 }}>
+              <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+                {
+                  products.map(product => <Allcar
+                    key={product.id}
+                    product={product}
+                    setBookingSuccess={setBookingSuccess}
+                  ></Allcar>)
                 }
+              </Grid>
+            </Box>
+          )
+        }
 
             </Container>
-            <Footer></Footer>
-        </div>
-    );
+      <Footer></Footer>
+    </div>
+  );
 };
 
 export default Allcars;
