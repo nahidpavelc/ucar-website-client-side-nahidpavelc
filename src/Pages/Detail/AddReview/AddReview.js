@@ -14,7 +14,7 @@ const AddReview = () => {
         formData.append('name', user.displayName);
         formData.append('review', review);
 
-        fetch('https://car-shop-server-side-nahidpavelc.vercel.app/reviews', {
+        fetch(`https://https://car-shop-server-side-nahidpavelc.vercel.app/reviews`, {
             method: 'POST',
             body: formData
         })

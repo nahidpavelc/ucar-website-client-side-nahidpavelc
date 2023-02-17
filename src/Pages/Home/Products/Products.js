@@ -28,11 +28,11 @@ const Products = () => {
       </Typography>
       {/* {bookingSuccess && <Alert severity="success">Order Confirmed</Alert>} */}
 
-       { products.length === 0 ? (
-                <div>
-                    <Loader />
-                </div>
-            ) : ( 
+      {products.length === 0 ? (
+        <div>
+          <Loader />
+        </div>
+      ) : (
         <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
             {

@@ -14,7 +14,7 @@ const Allcars = () => {
   // const { loading } = useAuth();
 
   useEffect(() => {
-    fetch('https://car-shop-server-side-nahidpavelc.vercel.app/cars')
+    fetch(`https://car-shop-server-side-nahidpavelc.vercel.app/cars`)
       .then(res => res.json())
       .then(data => setProducts(data));
   }, [])

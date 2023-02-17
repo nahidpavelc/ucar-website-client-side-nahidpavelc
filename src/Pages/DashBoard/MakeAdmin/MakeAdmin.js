@@ -17,7 +17,7 @@ const MakeAdmin = () => {
     const handleAdminSubmit = e => {
         const user = { email };
 
-        fetch('https://car-shop-server-side-nahidpavelc.vercel.app/admin', {
+        fetch(`https://https://car-shop-server-side-nahidpavelc.vercel.app/admin`, {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,

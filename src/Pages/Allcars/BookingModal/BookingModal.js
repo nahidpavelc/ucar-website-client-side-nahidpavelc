@@ -66,7 +66,7 @@ const BookingModal = ({ open, handleClose, product, setBookingSuccess }) => {
     }
 
     //Send to the Server
-    fetch('https://car-shop-server-side-nahidpavelc.vercel.app/bookings', {
+    fetch(`https://https://car-shop-server-side-nahidpavelc.vercel.app/bookings`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

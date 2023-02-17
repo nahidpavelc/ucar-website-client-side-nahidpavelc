@@ -48,7 +48,7 @@ const Detail = () => {
     const [booking, setBooking] = useState(initialInfo);
 
     useEffect(() => {
-        fetch('https://car-shop-server-side-nahidpavelc.vercel.app/cars/${productId}')
+        fetch(`https://car-shop-server-side-nahidpavelc.vercel.app/cars/${productId}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
@@ -106,7 +106,7 @@ const Detail = () => {
         }
 
         //SEnd to the Server
-        fetch('https://car-shop-server-side-nahidpavelc.vercel.app/bookings', {
+        fetch(`https://car-shop-server-side-nahidpavelc.vercel.app/bookings`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

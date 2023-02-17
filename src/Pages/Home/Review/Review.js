@@ -15,7 +15,7 @@ const Review = () => {
   const { user } = useAuth();
 
   useEffect(() => {
-    fetch('https://car-shop-server-side-nahidpavelc.vercel.app/reviews')
+    fetch(`https://car-shop-server-side-nahidpavelc.vercel.app/reviews`)
       .then(res => res.json())
       .then(data => setUserReviews(data))
   }, [])

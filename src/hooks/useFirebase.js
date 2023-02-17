@@ -119,7 +119,7 @@ const useFirebase = () => {
   const saveUser = (email, name, method) => {
     // const saveUser = (email, name) => {
     const user = { email, name };
-    fetch('https://car-shop-server-side-nahidpavelc.vercel.app/users', {
+    fetch(`https://car-shop-server-side-nahidpavelc.vercel.app/users`, {
       // method: method,
       method: method,
       headers: {
